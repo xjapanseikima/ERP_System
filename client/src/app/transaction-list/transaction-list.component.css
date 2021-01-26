@@ -1,0 +1,11 @@
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+.tab1 {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
