@@ -22,12 +22,20 @@ public class EmployeeController {
         return Employee;
     }
     /*
-    *
     * This is for Post testing
     * */
     @PostMapping("/createEmployee")
     public void newEmployee(Employee employee){
-        employee.setEmployee_id(8);
-        employee.setEmployee_name("安安");
+        employee.setEmployee_name("test employee 再試一次");
+        employee.setEmployee_id(9);
+        service.newEmployee(employee);
+    }
+    /*
+     * This is for Post testing
+     * */
+    @DeleteMapping("/deleteEmployee")
+    public void deleteEmployeeById(Employee employee){
+        employee.setEmployee_id(9);
+        service.deleteEmployeeById(employee);
     }
 }
