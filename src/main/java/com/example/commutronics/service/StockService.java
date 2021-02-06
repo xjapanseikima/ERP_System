@@ -4,7 +4,6 @@ import com.example.commutronics.dao.StockRepository;
 import com.example.commutronics.model.Stock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
 @Service
 public class StockService {
     @Autowired
