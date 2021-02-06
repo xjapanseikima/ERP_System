@@ -1,4 +1,7 @@
 package com.example.commutronics.dao;
 
-public class CompanyRepository {
+import com.example.commutronics.model.Company;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CompanyRepository extends JpaRepository<Company,Integer> {
 }
