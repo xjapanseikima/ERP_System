@@ -16,14 +16,11 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService service;
-
     @GetMapping("/getAllProduct")
     public List getProducts(){
         List Product = service.getAllProducts();
         return Product;
     }
-
-
 }
 
 
