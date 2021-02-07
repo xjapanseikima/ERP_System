@@ -1,17 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { TransactionService } from './transaction/transaction.service';
+import { EmployeeService } from './employee/Employee.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {TransactionListComponent} from './transaction-list/transaction-list.component';
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TransactionListComponent
+    EmployeeListComponent
   ],
   imports: [BrowserModule,
     HttpClientModule,
@@ -25,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [TransactionService],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
