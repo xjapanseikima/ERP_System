@@ -1,7 +1,6 @@
 package com.example.commutronics.controller;
 
 import com.example.commutronics.service.CompanyService;
-import com.example.commutronics.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
