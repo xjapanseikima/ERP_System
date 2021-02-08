@@ -1,10 +1,8 @@
 package com.example.commutronics.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "product")
@@ -14,6 +12,11 @@ public class Product {
     private int product_id;
     @Column(name = "product_name")
     private String product_name;
+
+    @ManyToMany(mappedBy = "productList")
+    private List<Set> setList;
+
+
 
     public int getProduct_id() {
         return product_id;

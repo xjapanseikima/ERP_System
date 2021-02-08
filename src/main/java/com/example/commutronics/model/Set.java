@@ -1,9 +1,7 @@
 package com.example.commutronics.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "`set`")
@@ -14,6 +12,19 @@ public class Set{
 
     @Column(name = "set_name")
     private String set_name;
+
+    @ManyToMany
+    @JoinTable(name = "product_set", joinColumns = @JoinColumn(name = "set_id")
+                                   , inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> productList;
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
 
     public int getSet_id() {
         return set_id;
@@ -30,4 +41,6 @@ public class Set{
     public void setSet_name(String set_name) {
         this.set_name = set_name;
     }
+
+
 }
