@@ -16,6 +16,7 @@ public class Set{
     @ManyToMany
     @JoinTable(name = "product_set", joinColumns = @JoinColumn(name = "set_id")
                                    , inverseJoinColumns = @JoinColumn(name = "product_id"))
+
     private List<Product> productList;
 
     public List<Product> getProductList() {
