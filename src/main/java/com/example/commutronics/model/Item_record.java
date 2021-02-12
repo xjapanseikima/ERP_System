@@ -14,8 +14,23 @@ public class Item_record {
     private String import_id;
     @Column(name = "export_id")
     private String export_id;
-    @Column(name = "product_id")
-    private String product_id;
+    //@Column(name = "product_id")
+    //private String product_id;
+
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH},optional = false)
+    @JoinColumn(name = "product_id")
+    private Product product;
+    public int getProduct_id() {
+        return product.getProduct_id();
+    }
+
+    //public Product getProduct() {
+    //    return product;
+   // }
+
+    public void setProduct(Product product) {
+       this.product = product;
+    }
 
     public int getItem_record_id() {
         return item_record_id;
@@ -41,11 +56,11 @@ public class Item_record {
         this.export_id = export_id;
     }
 
-    public String getProduct_id() {
+   /*public String getProduct_id() {
         return product_id;
     }
 
     public void setProduct_id(String product_id) {
         this.product_id = product_id;
-    }
+    }*/
 }

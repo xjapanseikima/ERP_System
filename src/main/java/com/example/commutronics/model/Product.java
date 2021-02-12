@@ -13,6 +13,16 @@ public class Product {
     @Column(name = "product_name")
     private String product_name;
 
+    @OneToMany(mappedBy = "product",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+    private List<Item_record> itemRecordList;
+
+    public List<Item_record> getItemRecordList() {
+        return itemRecordList;
+    }
+
+    public void setItemRecordList(List<Item_record> itemRecordList) {
+        this.itemRecordList = itemRecordList;
+    }
 
     public int getProduct_id() {
         return product_id;
