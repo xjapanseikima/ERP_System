@@ -17,7 +17,7 @@ public class CompanyController {
     CompanyService service;
     @GetMapping("/getAllCompany")
     public List getAllEmployee() {
-        List Company = service.getAllCompany();
-        return Company;
+        List companyList = service.getAllCompany();
+        return companyList;
     }
 }

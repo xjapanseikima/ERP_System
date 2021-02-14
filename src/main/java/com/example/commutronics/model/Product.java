@@ -1,6 +1,5 @@
 package com.example.commutronics.model;
 
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,26 +8,24 @@ import java.util.List;
 public class Product {
     @Id
     @Column(name = "product_id")
-    private int product_id;
+    private String product_id;
     @Column(name = "product_name")
     private String product_name;
+    @OneToMany(mappedBy="product",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+    private java.util.List<Item_record> itemList;
 
-    @OneToMany(mappedBy = "product",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
-    private List<Item_record> itemRecordList;
-
-    public List<Item_record> getItemRecordList() {
-        return itemRecordList;
+    public List<Item_record> getItemList() {
+        return itemList;
+    }
+    public void setItemList(List<Item_record> itemList) {
+        this.itemList = itemList;
     }
 
-    public void setItemRecordList(List<Item_record> itemRecordList) {
-        this.itemRecordList = itemRecordList;
-    }
-
-    public int getProduct_id() {
+    public String getProduct_id() {
         return product_id;
     }
 
-    public void setProduct_id(int product_id) {
+    public void setProduct_id(String product_id) {
         this.product_id = product_id;
     }
 

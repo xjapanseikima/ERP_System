@@ -19,7 +19,7 @@ public class Item_recordController {
     Item_recordService service;
     @GetMapping("/getAllItemRecord")
     public List getAllItemRecord() {
-        List itemRecord = service.getAllItemRecord();
-        return itemRecord;
+        List itemRecordList = service.getAllItemRecord();
+        return itemRecordList;
     }
 }
