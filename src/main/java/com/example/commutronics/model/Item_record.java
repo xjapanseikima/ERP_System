@@ -54,6 +54,4 @@ public class Item_record {
     public void setExport_id(String export_id) {
         this.export_id = export_id;
     }
-
-
 }

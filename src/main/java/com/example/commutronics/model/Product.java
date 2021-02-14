@@ -17,7 +17,6 @@ public class Product {
     public List<Item_record> getItemList() {
         return itemList;
     }
-
     public void setItemList(List<Item_record> itemList) {
         this.itemList = itemList;
     }
