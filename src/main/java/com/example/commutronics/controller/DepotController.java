@@ -1,7 +1,6 @@
 package com.example.commutronics.controller;
 
 import com.example.commutronics.service.DepotService;
-import com.example.commutronics.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +17,7 @@ public class DepotController {
     DepotService service;
     @GetMapping("/getAllDepot")
     public List getAllEmployee() {
-        List Depot = service.getAllDepot();
-        return Depot;
+        List depotList = service.getAllDepot();
+        return depotList;
     }
 }
