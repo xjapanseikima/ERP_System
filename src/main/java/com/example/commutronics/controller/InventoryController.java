@@ -19,7 +19,7 @@ public class InventoryController {
     private InventoryService service;
     @GetMapping("/getAllInventory")
     public List getAllInventory(){
-        List Product = service.getAllInventory();
-        return Product;
+        List inventoryList = service.getAllInventory();
+        return inventoryList;
     }
 }

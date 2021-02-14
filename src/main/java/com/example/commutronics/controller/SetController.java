@@ -19,7 +19,7 @@ public class SetController {
 
     @GetMapping("/getAllSet")
     public List getAllSets(){
-        List set = service.getAllSets();
-        return set;
+        List setList = service.getAllSets();
+        return setList;
     }
 }

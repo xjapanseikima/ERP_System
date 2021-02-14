@@ -18,7 +18,7 @@ public class DepotController {
     DepotService service;
     @GetMapping("/getAllDepot")
     public List getAllEmployee() {
-        List Depot = service.getAllDepot();
-        return Depot;
+        List depotList = service.getAllDepot();
+        return depotList;
     }
 }
