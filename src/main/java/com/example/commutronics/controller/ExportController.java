@@ -19,7 +19,7 @@ public class ExportController {
     ExportService service;
     @GetMapping("/getAllExport")
     public List getAllExport(){
-        List Export = service.getAllExport();
-        return Export;
+        List ExportList = service.getAllExport();
+        return ExportList;
     }
 }
