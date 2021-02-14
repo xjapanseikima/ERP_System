@@ -18,7 +18,7 @@ public class InventoryController {
     @Autowired
     private InventoryService service;
     @GetMapping("/getAllInventory")
-    public List getProducts(){
+    public List getAllInventory(){
         List Product = service.getAllInventory();
         return Product;
     }
