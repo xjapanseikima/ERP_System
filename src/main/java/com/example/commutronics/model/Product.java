@@ -14,6 +14,12 @@ public class Product {
     @OneToMany(mappedBy="product",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
     private java.util.List<Item_record> itemList;
 
+    @OneToMany(mappedBy="product",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+    private java.util.List<Export> ExportList;
+
+    //public List<Export> getExportList() {return ExportList;}
+    public void setExportList(List<Export> exportList) {this.ExportList = exportList;}
+
     public List<Item_record> getItemList() {
         return itemList;
     }

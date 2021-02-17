@@ -1,10 +1,7 @@
 package com.example.commutronics.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
@@ -34,6 +31,48 @@ public class Export {
     private int employee_id;
     @Column(name = "export_sn")
     private String export_sn;
+
+
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH}, optional = false)
+    @JoinColumn(name="product_id", insertable=false, updatable=false)
+    private Product product;
+
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH}, optional = false)
+    @JoinColumn(name="set_id", insertable=false, updatable=false)
+    private Set set;
+
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH}, optional = false)
+    @JoinColumn(name="company_id", insertable=false, updatable=false)
+    private Company company;
+
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH}, optional = false)
+    @JoinColumn(name="depot_id", insertable=false, updatable=false)
+    private Depot depot;
+
+    @ManyToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH}, optional = false)
+    @JoinColumn(name="employee_id", insertable=false, updatable=false)
+    private Employee employee;
+
+
+    //public Product getProduct() {return product;}
+
+    //public Set getSet() {return set;}
+
+   // public Company getCompany() {return company;}
+
+    //public Depot getDepot() {return depot;}
+
+    //public Employee getEmployee() {return employee;}
+
+    public void setEmployee(Employee employee) {this.employee = employee;}
+
+    public void setDepot(Depot depot) {this.depot = depot;}
+
+    public void setCompany(Company company) {this.company = company;}
+
+    public void setSet(Set set) {this.set = set;}
+
+    public void setProduct(Product product) {this.product = product;}
 
     public int getExport_id() {
         return export_id;
