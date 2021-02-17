@@ -1,9 +1,7 @@
 package com.example.commutronics.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "depot")
@@ -16,9 +14,14 @@ public class Depot {
     @Column
     private String depot_loc;
 
-    public int getEmployee_id() {
-        return employee_id;
-    }
+    @OneToMany(mappedBy="depot",cascade= CascadeType.ALL,fetch=FetchType.LAZY)
+    private java.util.List<Export> ExportList;
+
+    //public List<Export> getExportList() {return ExportList;}
+
+    public void setExportList(List<Export> exportList) { this.ExportList = exportList;}
+
+    public int getEmployee_id() {return employee_id;}
 
     public void setEmployee_id(int employee_id) {
         this.employee_id = employee_id;

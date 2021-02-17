@@ -1,9 +1,7 @@
 package com.example.commutronics.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "company")
@@ -25,6 +23,13 @@ public class Company {
     private String company_email;
     @Column(name = "company_website")
     private String company_website;
+
+    @OneToMany(mappedBy="company",cascade= CascadeType.ALL,fetch=FetchType.LAZY)
+    private java.util.List<Export> ExportList;
+
+    //public List<Export> getExportList() {return ExportList;}
+
+    public void setExportList(List<Export> exportList) {this.ExportList = exportList;}
 
     public int getCompany_id() {
         return company_id;
