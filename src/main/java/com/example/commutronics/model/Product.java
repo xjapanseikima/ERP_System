@@ -11,8 +11,18 @@ public class Product {
     private String product_id;
     @Column(name = "product_name")
     private String product_name;
-    @OneToMany(mappedBy="product",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="product",fetch=FetchType.LAZY)
     private java.util.List<Item_record> itemList;
+    @OneToMany(mappedBy = "product")
+    private java.util.List<Inventory> inventoryList;
+
+//    public List<Inventory> getInventoryList() {
+//        return inventoryList;
+//    }
+//
+//    public void setInventoryList(List<Inventory> inventoryList) {
+//        this.inventoryList = inventoryList;
+//      }
 
     public List<Item_record> getItemList() {
         return itemList;

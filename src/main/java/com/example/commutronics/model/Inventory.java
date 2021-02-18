@@ -1,9 +1,6 @@
 package com.example.commutronics.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /*
@@ -30,7 +27,29 @@ public class Inventory {
     private Date Inventory_count_date;
     @Column( name ="Inventory_count_employee_id")
     private byte Inventory_count_employee_id;
+    @ManyToOne
+    @JoinColumn(name="product_id",insertable=false, updatable=false)
+    private Product product;
+    @ManyToOne
+    @JoinColumn(name="depot_id",insertable=false, updatable=false)
+    private Depot depot;
+    @ManyToOne
+    @JoinColumn(name="Inventory_count_employee_id",insertable=false, updatable=false)
+    private Employee emp;
 
+    public String getEmp_name() {
+        return emp.getEmployee_name();
+    }
+
+    public String getdepot_name() {
+        return depot.getDepot_name();
+    }
+    public String getdepot_loc() {
+        return depot.getDepot_loc();
+    }
+    public String getProduct_name() {
+        return product.getProduct_name();
+    }
     public short getInventory_id() {
         return inventory_id;
     }
@@ -76,6 +95,6 @@ public class Inventory {
     }
 
     public void setInventory_count_employee_id(byte inventory_count_employee_id) {
-        Inventory_count_employee_id = inventory_count_employee_id;
+        this.Inventory_count_employee_id = inventory_count_employee_id;
     }
 }
