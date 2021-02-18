@@ -24,6 +24,13 @@ public class Employee {
     @OneToMany(mappedBy="employee",cascade= CascadeType.ALL,fetch=FetchType.LAZY)
     private java.util.List<Export> ExportList;
 
+    @OneToMany(mappedBy="employee",cascade= CascadeType.ALL,fetch=FetchType.LAZY)
+    private java.util.List<Import> ImportList;
+
+    //public List<Import> getImportList() {return ImportList;}
+
+    public void setImportList(List<Import> importList) {this.ImportList = importList;}
+
     //public List<Export> getExportList() {return ExportList;}
 
     public void setExportList(List<Export> exportList) {this.ExportList = exportList;}
