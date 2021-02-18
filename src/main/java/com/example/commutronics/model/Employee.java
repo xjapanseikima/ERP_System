@@ -10,6 +10,16 @@ public class Employee {
     private int employee_id;
     @Column(name = "employee_name")
     private String employee_name;
+    @OneToMany(mappedBy = "Inventory_count_employee_id",fetch=FetchType.LAZY)
+    private java.util.List<Inventory> inventoryList;
+
+//    public List<Inventory> getInventoryList() {
+//        return inventoryList;
+//    }
+//
+//    public void setInventoryList(List<Inventory> inventoryList) {
+//        this.inventoryList = inventoryList;
+//    }
 
     @OneToMany(mappedBy="employee",cascade= CascadeType.ALL,fetch=FetchType.LAZY)
     private java.util.List<Export> ExportList;

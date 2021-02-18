@@ -13,6 +13,16 @@ public class Depot {
     private String depot_name;
     @Column
     private String depot_loc;
+    @OneToMany(mappedBy = "depot")
+    private java.util.List<Inventory> inventoryList;
+
+//    public List<Inventory> getInventoryList() {
+//        return inventoryList;
+//    }
+//
+//    public void setInventoryList(List<Inventory> inventoryList) {
+//        this.inventoryList = inventoryList;
+//    }
 
     @OneToMany(mappedBy="depot",cascade= CascadeType.ALL,fetch=FetchType.LAZY)
     private java.util.List<Export> ExportList;
